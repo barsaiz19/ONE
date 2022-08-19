@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferencia de edades</title>
+</head>
+<body>
+    <h1>Diferencia de edades</h1>
+
+    <script>
+        let myAge = 25;
+        let broAge = 22;
+
+        function findGap (firstAge, secondAge){
+            return firstAge - secondAge;
+        }
+
+        function jumpLine(nLines){
+            for (i = 0; i < nLines; i++){
+                document.write('<br>');
+            }
+        }
+
+        function showGap (){
+            document.write(`Mi edad es: ${myAge}`);
+            jumpLine(1);
+            document.write(`La edad de mi hermano es: ${broAge}`);
+            jumpLine(2);
+            document.write(`La diferencia de edad es: ${findGap(myAge, broAge)}`);
+        }
+
+        showGap();
+
+    </script>
+</body>
+</html>

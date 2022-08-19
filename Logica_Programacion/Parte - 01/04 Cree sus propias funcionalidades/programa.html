@@ -16,35 +16,49 @@
             document.write(saltoLinea);
         }
         
-        var anioActual = 2025;
-        // // Agregar saltos de línea utilizando variables; el número de saltos que haya aquí definirá cuantos saltos tendra en el document.write
-        // var saltoLinea = "<br><br><br>"
+        // Declaramos la función con el nombre que querramos llamarla
+        function imprimir(frase){
+            document.write(frase);
+        }
 
-        // Agrega saltos de línea utilizando una variable de tipo entero 
-        // y concatena los saltos de línea en un ciclo for
+        var anioActual = 2025;
         let saltos = 2;
         let saltoLinea = '';
-
+        
         for (let i = 0; i < saltos; i++) {
             saltoLinea = saltoLinea + '<br>';         
         }
 
+        // Función explicita para que sea llamada más facilmente
+        imprimir("Hola amigos, que hacen?");
+        saltarLinea();
+
+        // // // Agregar saltos de línea utilizando variables; el número de saltos que haya aquí definirá cuantos saltos tendra en el document.write
+        // // var saltoLinea = "<br><br><br>"
+
+        // // Agrega saltos de línea utilizando una variable de tipo entero 
+        // // y concatena los saltos de línea en un ciclo for
+        
+
+
 
         
-        document.write("Juan tiene: " + (anioActual-2000) + " años");
-        //document.write(saltoLinea);
-        // Una convención nos indica que las funciones se nombren con verbos
+        // //document.write("Juan tiene: " + (anioActual-2000) + " años");
+        imprimir("Juan tiene: " + (anioActual-2000) + " años");
+        // //document.write(saltoLinea);
+        // // Una convención nos indica que las funciones se nombren con verbos
         saltarLinea();
-        // document.write("<br>");
-        // document.write("<br>");
-        document.write("Pedro tiene: " + (anioActual-1995) + " años");
-        //document.write(saltoLinea);
+        // // document.write("<br>");
+        // // document.write("<br>");
+        // //document.write("Pedro tiene: " + (anioActual-1995) + " años");
+        imprimir("Pedro tiene: " + (anioActual-1995) + " años");
+        // //document.write(saltoLinea);
         saltarLinea();
         
         anioActual = 2030;
         
         
-        document.write("Carlos tiene: " + (anioActual-2005) + " años");
+        imprimir("Carlos tiene: " + (anioActual-2005) + " años");
     </script>
     
 </body>

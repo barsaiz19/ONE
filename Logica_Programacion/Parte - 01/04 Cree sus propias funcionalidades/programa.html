@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa</title>
+</head>
+<body>
+
+    <h1>Programa</h1>
+
+    <script>
+        var anioActual = 2025;
+        // // Agregar saltos de línea utilizando variables; el número de saltos que haya aquí definirá cuantos saltos tendra en el document.write
+        // var saltoLinea = "<br><br><br>"
+
+        // Agrega saltos de línea utilizando una variable de tipo entero 
+        // y concatena los saltos de línea en un ciclo for
+        let saltos = 2;
+        let saltoLinea = '';
+
+        for (let i = 0; i < saltos; i++) {
+            saltoLinea = saltoLinea + '<br>';         
+        }
+
+        document.write("Juan tiene: " + (anioActual-2000) + " años");
+        document.write(saltoLinea);
+        // document.write("<br>");
+        // document.write("<br>");
+        document.write("Pedro tiene: " + (anioActual-1995) + " años");
+        document.write(saltoLinea);
+        
+        anioActual = 2030;
+        
+        
+        document.write("Carlos tiene: " + (anioActual-2005) + " años");
+    </script>
+    
+</body>
+</html>

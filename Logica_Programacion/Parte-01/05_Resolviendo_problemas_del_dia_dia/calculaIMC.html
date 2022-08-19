@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indice de Masa Corporal</title>
+</head>
+<body>
+    <script>
+        function jumpLine(jumps){
+            for(i=0; i<jumps; i++){
+                document.write('<br>');
+            }
+        }
+
+        function print (msg){
+            document.write(msg);
+            jumpLine(2);
+        }
+
+        // Datos que necesito del usuario
+        let weight = 71;
+        let height = 1.63;
+        let imc = weight / (height*height);
+
+        print('El IMC del usuario es: ' + imc)
+    </script>
+</body>
+</html>

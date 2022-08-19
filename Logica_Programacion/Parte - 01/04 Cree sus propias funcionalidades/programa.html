@@ -11,6 +11,11 @@
     <h1>Programa</h1>
 
     <script>
+        // Es una buena practica crear las funciones al inicio del script
+        function saltarLinea(){
+            document.write(saltoLinea);
+        }
+        
         var anioActual = 2025;
         // // Agregar saltos de línea utilizando variables; el número de saltos que haya aquí definirá cuantos saltos tendra en el document.write
         // var saltoLinea = "<br><br><br>"
@@ -24,12 +29,17 @@
             saltoLinea = saltoLinea + '<br>';         
         }
 
+
+        
         document.write("Juan tiene: " + (anioActual-2000) + " años");
-        document.write(saltoLinea);
+        //document.write(saltoLinea);
+        // Una convención nos indica que las funciones se nombren con verbos
+        saltarLinea();
         // document.write("<br>");
         // document.write("<br>");
         document.write("Pedro tiene: " + (anioActual-1995) + " años");
-        document.write(saltoLinea);
+        //document.write(saltoLinea);
+        saltarLinea();
         
         anioActual = 2030;
         

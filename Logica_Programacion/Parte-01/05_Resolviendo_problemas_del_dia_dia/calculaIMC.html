@@ -16,15 +16,22 @@
 
         function print (msg){
             document.write(msg);
-            jumpLine(2);
+            jumpLine(2); //función anidada
         }
 
-        // Datos que necesito del usuario
-        let weight = 71;
-        let height = 1.63;
-        let imc = weight / (height*height);
+        // Funcion para calcular el IMC
+        function calculateBMI(weight, height, nombre){{
+            print(`El IMC de ${nombre} es: ${weight/(height*height)}`); //Función anidada
+        }}
 
-        print('El IMC del usuario es: ' + imc)
+        // // Datos que necesito del usuario
+        // let weight = 71;
+        // let height = 1.63;
+        // let bmi = weight / (height*height);
+
+        // print('El IMC del usuario es: ' + calculateBMI(71, 1.63));
+        calculateBMI(71,1.72, "Cristian");
+        calculateBMI(75,1.73, "Felipe");
     </script>
 </body>
 </html>

@@ -22,11 +22,25 @@
         }
 
         // Funcion para calcular el IMC
-        function calculateBMI(weight, height, nombre) {
+        // Esta forma de pasar la función es incorrecta, ya que nos pide muchos datos
+        // function calculateBMI(weight1, height1, nombre1, weight2, height2, nombre2) {
+        //     {
+        //         imc1 = weight1 / (height1*height1)
+        //         imc2 = weight2 / (height2*height2)
+        //         print("El promedio del IMC calculado de " + nombre1 + " y " + nombre2 + " es " + ((imc1+imc2)/2))
+        //         // print(`El IMC de ${nombre1} es: ${weight / (height * height)}`); //Función anidada
+        //     }
+        // }
+        function calculateBMI(weight, height) {
             {
-                print(`El IMC de ${nombre} es: ${weight / (height * height)}`); //Función anidada
+                imc = weight / (height*height)
+                // print(`El IMC de ${nombre1} es: ${weight / (height * height)}`); //Función anidada
+                return imc;
             }
         }
+
+        let imcCristian = calculateBMI(71, 1.72);
+        let imcFelipe = calculateBMI(75, 1.73);
 
         // // Datos que necesito del usuario
         // let weight = 71;
@@ -34,9 +48,10 @@
         // let bmi = weight / (height*height);
 
         // print('El IMC del usuario es: ' + calculateBMI(71, 1.63));
-        calculateBMI(71, 1.72, "Cristian");
-        calculateBMI(75, 1.73, "Felipe");
+        //calculateBMI(71, 1.72, "Cristian", 75, 1.73, "Felipe");
+        print ("El promedio de IMC de Cristian y Felipe es: " + ((imcCristian+imcFelipe)/2) )
     </script>
+    
 </body>
 
 </html>

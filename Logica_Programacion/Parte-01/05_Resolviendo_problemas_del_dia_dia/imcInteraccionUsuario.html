@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        function jumpLine(jumps) {
+            for (i = 0; i < jumps; i++) {
+                document.write('<br>');
+            }
+        }
+
+        function print(msg) {
+            document.write(msg);
+            jumpLine(2); //función anidada
+        }
+
+        function calculateBMI(weight, height) {
+            {
+                imc = weight / (height * height)
+                // print(`El IMC de ${nombre1} es: ${weight / (height * height)}`); //Función anidada
+                return imc;
+            }
+        }
+//La función prompt lanza un pop-up que solicita datos del usuario
+        nombreInformado = prompt("Informe su nombre: ");
+        pesoInformado = prompt(nombreInformado + " Informe su peso: ");
+        alturaInformada = prompt (nombreInformado + " Informe su altura");
+
+        IMCCalculado = calculateBMI(pesoInformado, alturaInformada);
+
+        print(nombreInformado + " tiene un IMC calculado de: " + IMCCalculado);
+
+    </script>
 </body>
+
 </html>

@@ -1,1 +1,1 @@
-#Lógica de Programación parte 1: primeros pasos
+# Lógica de Programación parte 1: primeros pasos

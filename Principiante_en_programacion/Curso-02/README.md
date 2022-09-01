@@ -1,1 +1,1 @@
-#Lógica de Programación parte 2: Conceptos primordiales
+# Lógica de Programación parte 2: Conceptos primordiales

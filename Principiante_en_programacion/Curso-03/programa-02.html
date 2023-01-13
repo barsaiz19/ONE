@@ -17,39 +17,19 @@
 		height="400">
 	</canvas>
 	<script>
-		function dibujarCuadradoRojo(x, y) {
+		function dibujarCuadrado(x, y, color) {
 			let pantalla = document.querySelector("canvas"); /* Indicamos que la pantalla será nuestro canvas */
 			let pincel = pantalla.getContext("2d"); /* Indicamos que el pincel usará el contenido de la pantalla en 2d */
 
-			pincel.fillStyle = "red";
+			pincel.fillStyle = color;
 			pincel.fillRect(x, y, 50, 50);
 			// pincel.strokeStyle = "black";
 			pincel.strokeRect(x, y, 50, 50);
 		}
 
-		function dibujarCuadradoVerde(x, y) {
-			let pantalla = document.querySelector("canvas"); /* Indicamos que la pantalla será nuestro canvas */
-			let pincel = pantalla.getContext("2d"); /* Indicamos que el pincel usará el contenido de la pantalla en 2d */
-
-			pincel.fillStyle = "green";
-			pincel.fillRect(x, y, 50, 50);
-			// pincel.strokeStyle = "black";
-			pincel.strokeRect(x, y, 50, 50);
-		}
-
-		function dibujarCuadradoAmarillo(x, y) {
-			let pantalla = document.querySelector("canvas"); /* Indicamos que la pantalla será nuestro canvas */
-			let pincel = pantalla.getContext("2d"); /* Indicamos que el pincel usará el contenido de la pantalla en 2d */
-
-			pincel.fillStyle = "yellow";
-			pincel.fillRect(x, y, 50, 50);
-			pincel.strokeStyle = "black";
-			pincel.strokeRect(x, y, 50, 50);
-		}
-
-		dibujarCuadradoVerde(0, 0);
-		dibujarCuadradoAmarillo(50, 50);
-		dibujarCuadradoRojo(100, 100);
+		dibujarCuadrado(0, 0, "green");
+		dibujarCuadrado(50, 50, "yellow");
+		dibujarCuadrado(100, 100, "red");
 	</script>
 	<body></body>
 </html>

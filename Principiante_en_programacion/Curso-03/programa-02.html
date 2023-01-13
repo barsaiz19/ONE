@@ -1,0 +1,35 @@
+<!-- CREANDO UNA BANDERA -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Practicando con Juegos y Animaciones</title>
+	</head>
+	<!-- Canvas es un espacio donde podemos añadir graficos y dibujos-->
+	<canvas
+		width="600"
+		height="400">
+	</canvas>
+	<script>
+		function dibujarCuadradoVerde() {
+			let pantalla = document.querySelector("canvas"); /* Indicamos que la pantalla será nuestro canvas */
+			let pincel = pantalla.getContext("2d"); /* Indicamos que el pincel usará el contenido de la pantalla en 2d */
+
+			pincel.fillStyle = "green";
+			pincel.fillRect(0, 0, 50, 50);
+			pincel.strokeStyle = "black";
+			pincel.strokeRect(0, 0, 50, 50);
+		}
+		dibujarCuadradoVerde();
+		dibujarCuadradoVerde();
+		dibujarCuadradoVerde();
+		dibujarCuadradoVerde();
+	</script>
+	<body></body>
+</html>

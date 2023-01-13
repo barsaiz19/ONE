@@ -17,19 +17,19 @@
 		height="400">
 	</canvas>
 	<script>
-		function dibujarCuadradoVerde() {
+		function dibujarCuadradoVerde(x) {
 			let pantalla = document.querySelector("canvas"); /* Indicamos que la pantalla será nuestro canvas */
 			let pincel = pantalla.getContext("2d"); /* Indicamos que el pincel usará el contenido de la pantalla en 2d */
 
 			pincel.fillStyle = "green";
-			pincel.fillRect(0, 0, 50, 50);
+			pincel.fillRect(x, 0, 50, 50);
 			pincel.strokeStyle = "black";
-			pincel.strokeRect(0, 0, 50, 50);
+			pincel.strokeRect(x, 0, 50, 50);
 		}
-		dibujarCuadradoVerde();
-		dibujarCuadradoVerde();
-		dibujarCuadradoVerde();
-		dibujarCuadradoVerde();
+		dibujarCuadradoVerde(0);
+		dibujarCuadradoVerde(50);
+		dibujarCuadradoVerde(100);
+		dibujarCuadradoVerde(150);
 	</script>
 	<body></body>
 </html>

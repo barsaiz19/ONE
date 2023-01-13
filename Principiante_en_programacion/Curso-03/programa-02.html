@@ -27,13 +27,13 @@
 			pincel.strokeRect(x, y, 50, altura);
 		}
 
-		function numeroRandom() {
-			return Math.round(Math.random() * 50);
+		function numeroRandom(maximo) {
+			return Math.round(Math.random() * maximo);
 		}
 
-		dibujarCuadrado(0, 0, "green", numeroRandom());
-		dibujarCuadrado(50, 50, "yellow", numeroRandom());
-		dibujarCuadrado(100, 100, "red", numeroRandom());
+		dibujarCuadrado(numeroRandom(550), 0, "green", numeroRandom(50));
+		dibujarCuadrado(numeroRandom(550), 50, "yellow", numeroRandom(50));
+		dibujarCuadrado(numeroRandom(550), 100, "red", numeroRandom(50));
 	</script>
 	<body></body>
 </html>

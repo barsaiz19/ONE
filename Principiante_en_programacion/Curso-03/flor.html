@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Flor</title>
+	</head>
+
+	<body>
+		<canvas
+			width="600"
+			height="400">
+		</canvas>
+	</body>
+
+	<script>
+		function dibujarCirculo(x, y, radio, color) {
+			draw.fillStyle = color;
+			draw.beginPath();
+			draw.arc(x, y, radio, 0, 2 * 3.14);
+			draw.fill();
+		}
+
+		let canvas = document.querySelector("canvas");
+		let draw = canvas.getContext("2d");
+
+		draw.fillStyle = "lightgray";
+		draw.fillRect(0, 0, 600, 400);
+
+		dibujarCirculo(300, 200, 20, "red");
+		dibujarCirculo(300, 160, 20, "yellow");
+		dibujarCirculo(300, 240, 20, "blue");
+		dibujarCirculo(260, 200, 20, "orange");
+		dibujarCirculo(340, 200, 20, "black");
+	</script>
+</html>

@@ -31,9 +31,17 @@
 			return Math.round(Math.random() * maximo);
 		}
 
-		dibujarCuadrado(numeroRandom(550), 0, "green", numeroRandom(50));
-		dibujarCuadrado(numeroRandom(550), 50, "yellow", numeroRandom(50));
-		dibujarCuadrado(numeroRandom(550), 100, "red", numeroRandom(50));
+		let x = 0;
+		while (x < 600) {
+			dibujarCuadrado(x, 0, "red", 50);
+			dibujarCuadrado(x, 50, "yellow", 50);
+			dibujarCuadrado(x, 100, "green", 50);
+			x = x + 50;
+		}
+
+		// dibujarCuadrado(numeroRandom(550), 0, "green", numeroRandom(50));
+		// dibujarCuadrado(numeroRandom(550), 50, "yellow", numeroRandom(50));
+		// dibujarCuadrado(numeroRandom(550), 100, "red", numeroRandom(50));
 	</script>
 	<body></body>
 </html>

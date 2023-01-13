@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Triangulo</title>
+	</head>
+	<canvas
+		width="600"
+		height="800">
+	</canvas>
+	<script>
+		let canvas = document.querySelector("canvas");
+		let draw = canvas.getContext("2d");
+
+		//Triangulo de fondo color negro
+		draw.fillStyle = "black";
+		draw.beginPath();
+		draw.moveTo(0, 0);
+		draw.lineTo(0, 350);
+		draw.lineTo(350, 350);
+		draw.closePath();
+		draw.fill();
+
+		//Triangulo superior color blanco
+		draw.fillStyle = "white";
+		draw.beginPath();
+		draw.moveTo(50, 125);
+		draw.lineTo(50, 300);
+		draw.lineTo(225, 300);
+		draw.closePath();
+		draw.fill();
+	</script>
+	<body></body>
+</html>

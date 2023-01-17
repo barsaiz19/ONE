@@ -22,6 +22,12 @@
 
 		draw.fillStyle = "gray";
 		draw.fillRect(0, 0, 600, 400);
+
+		function mostrarAlerta() {
+			alert("Usted hizo un clic");
+		}
+
+		canvas.onclick = mostrarAlerta; //Cuando pasamos una función como parametro no es necesario colocar los parentesis
 	</script>
 	<body></body>
 </html>

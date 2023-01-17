@@ -1,0 +1,27 @@
+<!-- CREANDO UNA BANDERA -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Dibujando con funciones</title>
+	</head>
+	<!-- Canvas es un espacio donde podemos añadir graficos y dibujos-->
+	<canvas
+		width="600"
+		height="400">
+	</canvas>
+	<script>
+		let canvas = document.querySelector("canvas");
+		let draw = canvas.getContext("2d");
+
+		draw.fillStyle = "gray";
+		draw.fillRect(0, 0, 600, 400);
+	</script>
+	<body></body>
+</html>

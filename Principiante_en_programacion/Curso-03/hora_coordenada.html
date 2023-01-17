@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Hora Actual</title>
+	</head>
+	<body>
+		<canvas
+			width="600"
+			height="400"></canvas>
+		<script>
+			let canvas = document.querySelector("canvas");
+			let draw = canvas.getContext("2d");
+
+			draw.fillStyle = "gray";
+			draw.fillRect(0, 0, 600, 400);
+
+			function mostrarMensaje(evento) {
+				let x = evento.x - canvas.offsetLeft; //pos x
+				let y = evento.y - canvas.offsetTop; //pos x
+				let date = new Date();
+				let time = checkTime(date.getHours()) + ":" + checkTime(date.getMinutes()) + ":" + checkTime(date.getSeconds());
+
+				function checkTime(i) {
+					if (i < 10) {
+						i = "0" + 1;
+					}
+					return i;
+				}
+				alert("La hora es: " + time + "y las coordenadas son\nx: " + x + "\ny: " + y);
+			}
+
+			canvas.onclick = mostrarMensaje;
+		</script>
+	</body>
+</html>

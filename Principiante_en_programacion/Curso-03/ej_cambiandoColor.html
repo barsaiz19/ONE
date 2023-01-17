@@ -1,0 +1,65 @@
+<!-- CREANDO UNA BANDERA -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Dibujando circulos con cambio de color</title>
+	</head>
+	<!-- Canvas es un espacio donde podemos añadir graficos y dibujos-->
+	<canvas
+		width="600"
+		height="400">
+	</canvas>
+	<script>
+		//clientX/Y toma en cuenta solo el viewport
+		//pageX/Y toma en cuanta el tamaño de la página, incluyendo el desplazamiento horizontal
+		//x, y es la abreviatura para clientX/Y
+		let canvas = document.querySelector("canvas");
+		let draw = canvas.getContext("2d");
+		let colores = ["blue", "red", "green"];
+		let numColor = 0;
+
+		draw.fillStyle = "gray";
+		draw.fillRect(0, 0, 1800, 400);
+
+		function cambiarColor() {
+			if (numColor < 2) {
+				numColor = numColor + 1;
+			} else {
+				numColor = 0;
+			}
+			mostrarColor();
+
+			return false;
+		}
+		function dibujarCirculo(evento) {
+			let posX = evento.pageX - canvas.offsetLeft;
+			let posY = evento.pageY - canvas.offsetTop;
+
+			draw.fillStyle = colores[numColor];
+			draw.beginPath();
+			draw.arc(posX, posY, 10, 0, 2 * 3.14);
+			draw.fill();
+
+			console.log(posX + "," + posY + "," + colores[numColor]);
+			// alert("Usted hizo un clic en\nclientX: " + evento.x + "\nclientY: " + evento.y + "\n\nUsted hizo un clic en\npageX: " + evento.pageX + "\npageY: " + evento.pageY);
+		}
+
+		function mostrarColor() {
+			draw.fillStyle = colores[numColor];
+			draw.clearRect(0, 0, 25, 25);
+			draw.fillRect(0, 0, 25, 25);
+			console.log("El color actual seleccionado es : " + colores[numColor]);
+		}
+		mostrarColor();
+		canvas.onclick = dibujarCirculo;
+		canvas.oncontextmenu = cambiarColor;
+	</script>
+	<body></body>
+</html>

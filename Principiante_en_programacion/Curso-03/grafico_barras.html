@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Grafico de barras</title>
+	</head>
+	<canvas
+		width="600"
+		height="400"></canvas>
+	<script>
+		let canvas = document.querySelector("canvas");
+		let draw = canvas.getContext("2d");
+
+		let serie2009 = [6, 47, 41, 3, 3];
+		let serie2019 = [81, 9, 3, 3, 4];
+
+		let colores = ["blue", "green", "yellow", "red", "gray"];
+
+		function dibujarRectangulo(x, y, base, altura, color) {
+			draw.fillStyle = color;
+			draw.strokeStyle = "black";
+			draw.fillRect(x, y, base, altura);
+			draw.strokeRect(x, y, base, altura);
+		}
+
+		function dibujarBarra(serie, xi, yi, base, color, texto) {
+			escribirTexto(xi, yi - 10, texto);
+			let ya = yi;
+			for (let i = 0; i < serie.length; i++) {
+				dibujarRectangulo(xi, ya, base, serie[i], color[i]);
+				ya = ya + serie[i];
+				console.log(serie[i]);
+				console.log(ya, "+", serie[i]);
+				console.log(color[i]);
+			}
+		}
+
+		function escribirTexto(x, y, texto) {
+			draw.font = "15px Georgia";
+			draw.fillStyle = "black";
+			draw.fillText(texto, x, y);
+		}
+
+		dibujarBarra(serie2009, 50, 20, 50, colores, "2009");
+		dibujarBarra(serie2019, 150, 20, 50, colores, "2019");
+	</script>
+	<body></body>
+</html>

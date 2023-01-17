@@ -22,15 +22,25 @@
 		//x, y es la abreviatura para clientX/Y
 		let canvas = document.querySelector("canvas");
 		let draw = canvas.getContext("2d");
+		let colores = ["blue", "yellow", "green", "red", "green", "black", "white"];
 
 		draw.fillStyle = "gray";
 		draw.fillRect(0, 0, 1800, 400);
+
+		function obtenerNumero(numPosibles) {
+			return Math.round(Math.random() * numPosibles);
+		}
+		function colorear(colores) {
+			let numPosibles = colores.length;
+
+			return colores[obtenerNumero(numPosibles)];
+		}
 
 		function dibujarCirculo(evento) {
 			let posX = evento.pageX - canvas.offsetLeft;
 			let posY = evento.pageY - canvas.offsetTop;
 
-			draw.fillStyle = "blue";
+			draw.fillStyle = colorear(colores);
 			draw.beginPath();
 			draw.arc(posX, posY, 10, 0, 2 * 3.14);
 			draw.fill();

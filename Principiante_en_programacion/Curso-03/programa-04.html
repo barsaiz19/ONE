@@ -1,0 +1,44 @@
+<!-- CREANDO UNA BANDERA -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Dibujando circulos</title>
+	</head>
+	<!-- Canvas es un espacio donde podemos añadir graficos y dibujos-->
+	<canvas
+		width="600"
+		height="400">
+	</canvas>
+	<script>
+		//clientX/Y toma en cuenta solo el viewport
+		//pageX/Y toma en cuanta el tamaño de la página, incluyendo el desplazamiento horizontal
+		//x, y es la abreviatura para clientX/Y
+		let canvas = document.querySelector("canvas");
+		let draw = canvas.getContext("2d");
+
+		draw.fillStyle = "gray";
+		draw.fillRect(0, 0, 1800, 400);
+
+		function dibujarCirculo(evento) {
+			let posX = evento.pageX - canvas.offsetLeft;
+			let posY = evento.pageY - canvas.offsetTop;
+
+			draw.fillStyle = "blue";
+			draw.beginPath();
+			draw.arc(posX, posY, 10, 0, 2 * 3.14);
+			draw.fill();
+
+			console.log(posX + "," + posY);
+			// alert("Usted hizo un clic en\nclientX: " + evento.x + "\nclientY: " + evento.y + "\n\nUsted hizo un clic en\npageX: " + evento.pageX + "\npageY: " + evento.pageY);
+		}
+		canvas.onclick = dibujarCirculo;
+	</script>
+	<body></body>
+</html>

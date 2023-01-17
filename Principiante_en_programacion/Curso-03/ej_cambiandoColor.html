@@ -29,8 +29,8 @@
 		draw.fillRect(0, 0, 1800, 400);
 
 		function cambiarColor() {
-			if (numColor < 2) {
-				numColor = numColor + 1;
+			if (numColor < colores.length - 1) {
+				numColor++;
 			} else {
 				numColor = 0;
 			}

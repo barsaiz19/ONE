@@ -18,7 +18,9 @@
 		let canvas = document.querySelector("canvas");
 		let draw = canvas.getContext("2d");
 
-		let x = 0;
+		let x = 5;
+
+		let sentido = true;
 
 		const pi = Math.PI;
 
@@ -41,13 +43,23 @@
 
 		function actualizarPantalla() {
 			limpiarPantalla();
-			crearCircunferencia(x, 20, 10);
-			x++;
+			crearCircunferencia(deltaX(), 20, 10);
+			cambiarSentido();
 		}
 
-		/* for (let x = 20; x < 600; x++) {
-					crearCircunferencia(x, 20, 10);
-				} */
+		function cambiarSentido() {
+			if (x == 595 || x == 5) {
+				sentido = !sentido;
+				console.log(x);
+				console.log(sentido);
+			}
+		}
+
+		function deltaX() {
+			sentido == true ? x++ : x--;
+			console.log("deltaX: " + x);
+			return x;
+		}
 
 		setInterval(actualizarPantalla, 1); //debemos llamar la función sin usar ()
 	</script>

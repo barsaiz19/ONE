@@ -30,7 +30,13 @@
 			draw.fill();
 		}
 
-		crearCircunferencia(20, 20, 10);
+		function limpiarCircunferencia() {
+			draw.clearRect(0, 0, 600, 400);
+		}
+
+		for (let x = 20; x < 600; x++) {
+			crearCircunferencia(x, 20, 10);
+		}
 	</script>
 	<body></body>
 </html>

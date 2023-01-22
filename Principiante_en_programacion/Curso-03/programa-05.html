@@ -18,6 +18,8 @@
 		let canvas = document.querySelector("canvas");
 		let draw = canvas.getContext("2d");
 
+		let x = 0;
+
 		const pi = Math.PI;
 
 		draw.fillStyle = "lightgrey";
@@ -30,13 +32,24 @@
 			draw.fill();
 		}
 
-		function limpiarCircunferencia() {
+		function limpiarPantalla() {
 			draw.clearRect(0, 0, 600, 400);
 		}
+		/* function exhibirMensaje() {
+					console.log("mostrando mensaje");
+				} */
 
-		for (let x = 20; x < 600; x++) {
+		function actualizarPantalla() {
+			limpiarPantalla();
 			crearCircunferencia(x, 20, 10);
+			x++;
 		}
+
+		/* for (let x = 20; x < 600; x++) {
+					crearCircunferencia(x, 20, 10);
+				} */
+
+		setInterval(actualizarPantalla, 1); //debemos llamar la función sin usar ()
 	</script>
 	<body></body>
 </html>

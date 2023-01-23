@@ -8,7 +8,7 @@
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
-		<title>Animando Circulo</title>
+		<title>Tiro al blanco</title>
 	</head>
 	<canvas
 		width="600"
@@ -18,7 +18,7 @@
 		let canvas = document.querySelector("canvas");
 		let draw = canvas.getContext("2d");
 
-		let x = 5;
+		// let x = 5;
 
 		let radio = 10;
 
@@ -48,9 +48,10 @@
 			draw.fillStyle = "lightgrey";
 			draw.fillRect(0, 0, 600, 400);
 			// las funciones generarRandom deben ir en la función actualizarPantalla para realizar de nuevo el calculo, de lo contrario solo se haría el calculo una vez y la variable actualizarPantalla leería una variable fija
-			randomY = generarRandom(370);
 			randomX = generarRandom(570);
+			randomY = generarRandom(370);
 			crearObjetivo(randomX, randomY);
+			console.log(`posicion del objetivo ${randomX}, ${randomY}`);
 		}
 
 		function crearObjetivo(x, y) {
@@ -63,9 +64,23 @@
 			return Math.floor(Math.random() * maximo); //floor redondea hacia abajo
 		}
 
-		// crearObjetivo(randomX, randomY);
+		function disparar(evento) {
+			let x = evento.pageX - canvas.offsetLeft;
+			let y = evento.pageY - canvas.offsetTop;
+			console.log(`Posicion objetivo: ${randomX}, ${randomY} \n Posicion click ${x} ${y}`);
 
-		setInterval(actualizarPantalla, 1000);
+			if (x < randomX + radio && x > randomX - radio && y < randomY + radio && y > randomY - radio) {
+				alert("Has dado en el blanco");
+				actualizarPantalla();
+			}
+		}
+
+		// crearObjetivo(randomX, randomY);
+		// alert("Iniciar Juego");
+		actualizarPantalla();
+		setInterval(actualizarPantalla, 7000);
+
+		canvas.onclick = disparar;
 	</script>
 	<body></body>
 </html>

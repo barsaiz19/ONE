@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Basic Paint</title>
+	</head>
+	<canvas
+		width="600"
+		height="400">
+	</canvas>
+	<script>
+		let canvas = document.querySelector("canvas");
+		let draw = canvas.getContext("2d");
+
+		draw.fillStyle = "grey";
+		draw.fillRect(0, 0, 600, 400);
+
+		let estadoPincel = false;
+
+		function dibujarPincelada(evento) {
+			if (estadoPincel) {
+				let x = evento.pageX - canvas.offsetLeft;
+				let y = evento.pageY - canvas.offsetTop;
+
+				draw.fillStyle = "blue";
+				draw.beginPath();
+				draw.arc(x, y, 5, 0, 2 * Math.PI);
+				draw.fill();
+			}
+		}
+
+		canvas.onmousemove = dibujarPincelada;
+
+		function bajarPincel() {
+			estadoPincel = true;
+		}
+
+		function alzarPincel() {
+			estadoPincel = false;
+		}
+
+		canvas.onmousedown = bajarPincel;
+
+		canvas.onmouseup = alzarPincel;
+	</script>
+	<body></body>
+</html>

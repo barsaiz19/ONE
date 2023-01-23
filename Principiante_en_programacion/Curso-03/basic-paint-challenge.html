@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Basic Paint</title>
+	</head>
+	<canvas
+		width="600"
+		height="400">
+	</canvas>
+	<script>
+		let canvas = document.querySelector("canvas");
+		let draw = canvas.getContext("2d");
+
+		let colorLienzo = "grey";
+		let color1 = "red";
+		let color2 = "green";
+		let color3 = "blue";
+
+		let colorSeleccionado;
+
+		let estadoPincel = false;
+
+		function crearLienzo(colorLienzo) {
+			draw.fillStyle = colorLienzo;
+			draw.fillRect(0, 0, 600, 400);
+		}
+
+		function crearPaletaColores(color1, color2, color3) {
+			draw.strokeStyle = "black";
+			draw.fillStyle = color1;
+			draw.fillRect(0, 0, 25, 25);
+			draw.strokeRect(0, 0, 25, 25);
+			draw.fillStyle = color2;
+			draw.fillRect(25, 0, 25, 25);
+			draw.strokeRect(25, 0, 25, 25);
+			draw.fillStyle = color3;
+			draw.fillRect(50, 0, 25, 25);
+			draw.strokeRect(50, 0, 25, 25);
+		}
+
+		function seleccionarColor(evento) {
+			let x = evento.pageX - canvas.offsetLeft;
+			let y = evento.pageY - canvas.offsetTop;
+			if (x >= 0 && x < 25 && y < 26) {
+				console.log("red");
+				colorSeleccionado = "red";
+			} else if (x >= 25 && x < 50 && y < 26) {
+				console.log("green");
+				colorSeleccionado = "green";
+			} else if (x >= 50 && x <= 75 && y < 26) {
+				console.log("blue");
+				colorSeleccionado = "blue";
+			}
+		}
+
+		function dibujarPincelada(evento) {
+			let x = evento.pageX - canvas.offsetLeft;
+			let y = evento.pageY - canvas.offsetTop;
+
+			if (estadoPincel) {
+				draw.fillStyle = colorSeleccionado;
+				draw.beginPath();
+				draw.arc(x, y, 5, 0, 2 * Math.PI);
+				if (x > 80 || y > 30) {
+					draw.fill();
+				}
+			}
+		}
+
+		canvas.onmousemove = dibujarPincelada;
+
+		function bajarPincel() {
+			estadoPincel = true;
+		}
+
+		function alzarPincel() {
+			estadoPincel = false;
+		}
+
+		canvas.onclick = seleccionarColor;
+		canvas.onmousedown = bajarPincel;
+
+		canvas.onmouseup = alzarPincel;
+
+		crearLienzo(colorLienzo);
+		crearPaletaColores(color1, color2, color3);
+	</script>
+	<body></body>
+</html>

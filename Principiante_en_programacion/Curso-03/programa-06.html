@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Animando Circulo</title>
+	</head>
+	<canvas
+		width="600"
+		height="400">
+	</canvas>
+	<script>
+		let canvas = document.querySelector("canvas");
+		let draw = canvas.getContext("2d");
+
+		let x = 5;
+
+		let radio = 10;
+
+		let randomX = 0;
+		let randomY = 0;
+
+		let sentido = true;
+
+		const pi = Math.PI;
+
+		function crearCircunferencia(x, y, radio, color) {
+			draw.fillStyle = color;
+			draw.beginPath();
+			draw.arc(x, y, radio, 0, 2 * pi);
+			draw.fill();
+		}
+
+		function limpiarPantalla() {
+			draw.clearRect(0, 0, 600, 400);
+		}
+		/* function exhibirMensaje() {
+					console.log("mostrando mensaje");
+				} */
+
+		function actualizarPantalla() {
+			limpiarPantalla();
+			draw.fillStyle = "lightgrey";
+			draw.fillRect(0, 0, 600, 400);
+			// las funciones generarRandom deben ir en la función actualizarPantalla para realizar de nuevo el calculo, de lo contrario solo se haría el calculo una vez y la variable actualizarPantalla leería una variable fija
+			randomY = generarRandom(370);
+			randomX = generarRandom(570);
+			crearObjetivo(randomX, randomY);
+		}
+
+		function crearObjetivo(x, y) {
+			crearCircunferencia(x, y, radio * 3, "red");
+			crearCircunferencia(x, y, radio * 2, "white");
+			crearCircunferencia(x, y, radio * 1, "red");
+		}
+
+		function generarRandom(maximo) {
+			return Math.floor(Math.random() * maximo); //floor redondea hacia abajo
+		}
+
+		// crearObjetivo(randomX, randomY);
+
+		setInterval(actualizarPantalla, 1000);
+	</script>
+	<body></body>
+</html>

@@ -29,8 +29,8 @@
 		draw.fillRect(0, 0, 1800, 400);
 
 		function cambiarColor() {
-			if (numColor < 2) {
-				numColor = numColor + 1;
+			if (numColor < colores.length - 1) {
+				numColor++;
 			} else {
 				numColor = 0;
 			}
@@ -44,7 +44,7 @@
 
 			draw.fillStyle = colores[numColor];
 			draw.beginPath();
-			draw.arc(posX, posY, 10, 0, 2 * 3.14);
+			draw.arc(posX, posY, 10, 3.14, 2 * 3.14);
 			draw.fill();
 
 			console.log(posX + "," + posY + "," + colores[numColor]);

@@ -18,10 +18,9 @@
 		let canvas = document.querySelector("canvas");
 		let draw = canvas.getContext("2d");
 
+		let ladoCuadrado = 25;
 		let colorLienzo = "grey";
-		let color1 = "red";
-		let color2 = "green";
-		let color3 = "blue";
+		let colores = ["red", "green", "blue"];
 
 		let colorSeleccionado;
 
@@ -32,31 +31,28 @@
 			draw.fillRect(0, 0, 600, 400);
 		}
 
-		function crearPaletaColores(color1, color2, color3) {
+		function crearPaletaColores(colores) {
 			draw.strokeStyle = "black";
-			draw.fillStyle = color1;
-			draw.fillRect(0, 0, 25, 25);
-			draw.strokeRect(0, 0, 25, 25);
-			draw.fillStyle = color2;
-			draw.fillRect(25, 0, 25, 25);
-			draw.strokeRect(25, 0, 25, 25);
-			draw.fillStyle = color3;
-			draw.fillRect(50, 0, 25, 25);
-			draw.strokeRect(50, 0, 25, 25);
+
+			for (let i = 0; i < colores.length; i++) {
+				draw.fillStyle = colores[i];
+				draw.fillRect(ladoCuadrado * i, 0, ladoCuadrado, ladoCuadrado);
+				draw.strokeRect(ladoCuadrado * i, 0, ladoCuadrado, ladoCuadrado);
+			}
 		}
 
 		function seleccionarColor(evento) {
 			let x = evento.pageX - canvas.offsetLeft;
 			let y = evento.pageY - canvas.offsetTop;
-			if (x >= 0 && x < 25 && y < 26) {
-				console.log("red");
-				colorSeleccionado = "red";
-			} else if (x >= 25 && x < 50 && y < 26) {
-				console.log("green");
-				colorSeleccionado = "green";
-			} else if (x >= 50 && x <= 75 && y < 26) {
-				console.log("blue");
-				colorSeleccionado = "blue";
+			if (x >= 0 && x < ladoCuadrado && y < ladoCuadrado + 1) {
+				console.log(colores[0]);
+				colorSeleccionado = colores[0];
+			} else if (x >= ladoCuadrado && x < ladoCuadrado * 2 && y < ladoCuadrado + 1) {
+				console.log(colores[1]);
+				colorSeleccionado = colores[1];
+			} else if (x >= ladoCuadrado * 2 && x <= ladoCuadrado * 3 && y < ladoCuadrado + 1) {
+				console.log(colores[2]);
+				colorSeleccionado = colores[2];
 			}
 		}
 
@@ -68,7 +64,7 @@
 				draw.fillStyle = colorSeleccionado;
 				draw.beginPath();
 				draw.arc(x, y, 5, 0, 2 * Math.PI);
-				if (x > 80 || y > 30) {
+				if (x > ladoCuadrado * 3 + 5 || y > ladoCuadrado + 5) {
 					draw.fill();
 				}
 			}
@@ -90,7 +86,7 @@
 		canvas.onmouseup = alzarPincel;
 
 		crearLienzo(colorLienzo);
-		crearPaletaColores(color1, color2, color3);
+		crearPaletaColores(colores);
 	</script>
 	<body></body>
 </html>

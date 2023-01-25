@@ -1,0 +1,16 @@
+body {
+	background: #cccccc;
+}
+
+h1 {
+	text-align: center;
+	/* background: #ccc; */
+}
+p {
+	text-align: center;
+	/* background: #cccccc; */
+}
+
+em strong {
+	color: red;
+}

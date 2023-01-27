@@ -81,3 +81,16 @@ nav a:hover {
 	font-weight: bold;
 	margin-top: 10px;
 }
+
+footer {
+	text-align: center;
+	padding: 40px;
+	/* La propiedad background repite la imagen las veces necesarias */
+	background: url(../assets/img_productos/bg.jpg);
+}
+
+.copyright {
+	font-size: 13px;
+	color: #fff;
+	margin: 20px;
+}

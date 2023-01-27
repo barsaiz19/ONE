@@ -28,6 +28,12 @@ nav a {
 	text-decoration: none; /* Desactiva el subrayado que tienen por defecto los elementos a */
 }
 
+/* Hover captura cuando el mouse está encima del elemento */
+nav a:hover {
+	color: #c78c19;
+	text-decoration: underline;
+}
+
 .productos {
 	width: 940px;
 	margin: 0 auto;
@@ -43,11 +49,27 @@ nav a {
 	width: 30%;
 	vertical-align: top;
 	/* background-color: #cccccc; */
+	border: black 2px solid; /* Xpx Type Color */
+	border-radius: 10px; /* top left top right bottom right bottom left */
+}
+
+.productos li:hover {
+	border-color: #c78c19;
+}
+
+/* Active captura el clic presionado*/
+.productos li:active {
+	border-color: #088c19;
 }
 
 .productos h2 {
 	font-size: 30px;
 	font-weight: bold;
+}
+
+/* Afecto al h2 que se encuentra en .productos li */
+.productos li:hover h2 {
+	font-size: 33px;
 }
 
 .producto-descripcion {

@@ -94,3 +94,70 @@ footer {
 	color: #fff;
 	margin: 20px;
 }
+
+main {
+	width: 940px;
+	margin: 0 auto;
+}
+
+form {
+	margin: 40px 0;
+}
+
+form label,
+form legend {
+	display: block;
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+
+.input-padron {
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 50%;
+}
+
+.checkbox {
+	margin: 20px 0;
+}
+
+.enviar {
+	width: 40%;
+	padding: 15px 0;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+	background: orange;
+	border: none;
+	border-radius: 5px;
+	transition: 0.7s;
+	cursor: pointer;
+}
+
+.enviar:hover {
+	background: darkorange;
+	/* para poder ejecutar diferentes transformaciones, estas deberán ir en la misma linea */
+	/* transform: scale(1.2);
+	transform: rotate(70deg); */
+	/* transform: scale(1.2) rotate(70deg); */
+	transform: scale(1.2);
+}
+
+/* Estilos tabla */
+
+table {
+	margin: 40px 40px;
+}
+
+thead {
+	background: #555555;
+	color: white;
+	font-weight: bold;
+}
+
+td,
+th {
+	border: 1px solid black;
+	padding: 8px 15px;
+}

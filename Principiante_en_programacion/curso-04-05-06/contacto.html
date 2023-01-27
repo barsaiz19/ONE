@@ -33,10 +33,146 @@
 				</nav>
 			</div>
 		</header>
+		<main>
+			<form action="">
+				<label for="nombreapellido">Nombre y Apellido</label>
+				<input
+					class="input-padron"
+					type="text"
+					name=""
+					id="nombreapellido"
+					required />
+
+				<label for="correoelectronico">Correo Electrónico</label>
+				<input
+					class="input-padron"
+					type="email"
+					name=""
+					id="correoelectronico"
+					required
+					placeholder="email@dominio.com" />
+
+				<label for="telefono">Teléfono</label>
+				<input
+					class="input-padron"
+					type="tel"
+					name=""
+					id="telefono"
+					required
+					placeholder="(XX)X XXX XXXX" />
+
+				<label for="mensaje">Mensaje</label>
+				<textarea
+					class="input-padron"
+					name=""
+					id="mensaje"
+					cols="70"
+					rows="10"
+					required
+					placeholder="Escribe un mensaje"></textarea>
+
+				<!-- Fieldset hace referencia a grupos de elementos con información similar -->
+				<fieldset>
+					<!-- legend es similar a la etiqueta p, pero se utiliza mayormente para fieldset -->
+					<legend>¿Cómo le gustaría ser contactado</legend>
+					<label for="radio-email">
+						<input
+							type="radio"
+							name="contacto"
+							value="email"
+							id="radio-email" />
+						Email
+					</label>
+
+					<!-- Utilizando la propiedad name agrupamos los items, restringuiendo la selección a solo uno de los elementos con el mismo name -->
+					<label for="radio-telefono">
+						<input
+							type="radio"
+							name="contacto"
+							value="telefono"
+							id="radio-telefono" />
+						Teléfono
+					</label>
+
+					<label for="radio-whatsapp">
+						<input
+							type="radio"
+							name="contacto"
+							value="whatsapp"
+							id="radio-whatsapp"
+							checked />
+						Whatsapp
+					</label>
+				</fieldset>
+
+				<fieldset>
+					<legend>¿En cuál horario prefiere ser atendido?</legend>
+					<select
+						name=""
+						id="">
+						<option value="">Mañana</option>
+						<option value="">Tarde</option>
+						<option value="">Noche</option>
+					</select>
+				</fieldset>
+
+				<label
+					class="checkbox"
+					for="">
+					<input
+						type="checkbox"
+						name=""
+						id=""
+						checked />¿Le gustaría recibir novedades de la Barbería Alura?
+				</label>
+
+				<input
+					class="enviar"
+					type="submit"
+					value="Enviar formulario" />
+			</form>
+			<!-- 
+			    La etiqueta table, representa la tabla.
+    			La etiqueta tr, representa la fila de la tabla.
+    			La etiqueta td, representa la celda de la tabla.
+    			La etiqueta thead, representa el encabezado de la tabla.
+    			La etiqueta tbody, representa el cuerpo de la tabla.
+    			La etiqueta th, representa la celda del encabezado de la tabla.
+    			La etiqueta tfoot, representa el pie de página de la tabla.  -->
+			<table>
+				<!-- Table Head - Encabezado -->
+				<thead>
+					<!-- table rows - lineas -->
+					<tr>
+						<!-- table data Head-->
+						<th>Día</th>
+						<th>Horario</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<!-- table data - celdas-->
+						<td>Lunes</td>
+						<td>8:00 hrs - 20:00hrs</td>
+					</tr>
+
+					<tr>
+						<td>Miércoles</td>
+						<td>8:00 hrs - 20:00hrs</td>
+					</tr>
+
+					<tr>
+						<td>Viernes</td>
+						<td>8:00 hrs - 20:00hrs</td>
+					</tr>
+				</tbody>
+			</table>
+		</main>
 		<footer>
 			<img
 				src="assets/img_productos/logo-blanco.png"
-				alt="" />
+				alt="Logo Barbería ALURA" />
 			<p class="copyright">&copy; Copyright Barbería Alura - 2023</p>
 		</footer>
 	</body>

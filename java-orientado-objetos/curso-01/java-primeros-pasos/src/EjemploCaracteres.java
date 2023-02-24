@@ -12,6 +12,9 @@ public class EjemploCaracteres {
 		caracter = 65 + 1; //Toma el valor del código ASCII
 		System.out.println(caracter); //Imprime B
 		
+		//caracter = caracter + 3; -> No compila! Debido a Java transforma el resultado al tipo más grande, en este caso un INT
+		//System.out.println(caracter); 
+		
 		caracter = 65 + 1; //Toma el valor del código ASCII 66 -> B
 		char segundoCaracter = (char) (caracter + 1); //Hacemos Cast a la suma de 66 + 1 -> C
 		System.out.println(segundoCaracter); //Imprime C
@@ -23,11 +26,6 @@ public class EjemploCaracteres {
 		//Concatenación de String
 		palabra = palabra + " 2023";
 		System.out.println(palabra);
-		
-		caracter = caracter + 3;
-		System.out.println(caracter);
-
-
 		
 	}
 }

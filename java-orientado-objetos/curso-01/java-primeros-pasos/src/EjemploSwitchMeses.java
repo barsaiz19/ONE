@@ -3,7 +3,7 @@ public class EjemploSwitchMeses {
 
 	public static void main(String[] args) {
 		int noMes = 12;
-		
+
 		switch (noMes) {
 		case 1:
 			System.out.println("Enero");
